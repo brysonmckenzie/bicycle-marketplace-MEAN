@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="bikeofday">
+    <h3>Bike of the Day!</h3>
+    <div class="randomBike">
+      <div class="image-container">
+        <img [src]="random.imageURL">
+        <div class="text">
+          <h2>{{random.title}}</h2>
+          <p>Description: {{random.description}}</p>
+          <p>Price: {{ random.price | currency:USD:true }}</p>
+          <p>Location: {{random.location}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="lrcontent">
+    <div class="loginreg">
+      <fieldset>
+        <legend>Login</legend>
+
+        <form (submit)="login(logData)" #logData="ngForm">
+          <label>Email</label><br>
+          <input type="email" name="email" [(ngModel)]="log.email" #email='ngModel'><br>
+          <label>Password</label><br>
+          <input type="password" name="password" [(ngModel)]="log.password" #password='ngModel'><br>
+          <input type="submit" value="Login">
+        </form>
+
+      </fieldset>
+
+    </div>
+    <div class="loginreg">
+
+      <fieldset>
+        <legend>Register</legend>
+
+        <form (submit)="createUser(regData)" #regData="ngForm">
+          <label>First Name</label><br>
+          <input type="text" name="first_name" [(ngModel)]="reg.first_name" #first_name='ngModel'><br>
+
+          <label>Last Name</label><br>
+          <input type="text" name="last_name" [(ngModel)]="reg.last_name" #last_name='ngModel'><br>
+
+          <label>Email</label><br>
+          <input type="email" name="email" [(ngModel)]="reg.email" #email='ngModel'><br>
+
+          <label>Password</label><br>
+          <input type="password" name="password" [(ngModel)]="reg.password" #password='ngModel'><br>
+
+          <label>Password Confirmation</label><br>
+          <input type="password" name="password_confirmation" [(ngModel)]="reg.password_confirmation" #password_confirmation="ngModel"
+            validateEqual="password"><br>
+          <input type="submit" value="Register">
+        </form>
+
+      </fieldset>
+
+    </div>
+  </div>
+</div>
