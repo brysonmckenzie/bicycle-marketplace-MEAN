@@ -21,13 +21,21 @@ export class ApiService {
     return this._http.get('/api/randbikes').map( data => data.json()).toPromise();
   }
   getBikes(){
-    return this._http.get('/api/allBikes').map(data => data.json()).toPromise();
+    return this._http.get('/api/userBikes').map(data => data.json()).toPromise();
   }
   logout() {
     return this._http.get('/logout').map(data => data.json()).toPromise();
   }
 
+  allBicycles(){
+    return this._http.get('/api/allBikes').map(data => data.json()).toPromise();
+  }
+
   currentUser() {
     return this._http.get('/currentUsers').map(data => data.json()).toPromise();
+  }
+
+  createBike(bike){
+    return this._http.post('/api/newBikeListing', bike).map(data => data.json()).toPromise();
   }
 }

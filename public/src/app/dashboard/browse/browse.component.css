@@ -1,0 +1,19 @@
+.container{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+    margin-left: 0px 100px 100px 100px;
+   
+
+}
+
+.open-list{
+    background-color: slategray;
+    padding:20px;
+    margin-bottom: 20px;
+    /* opacity:0.5; */
+    /* z-index: -1; */
+}
+
+img{
+    /* z-index: 1; */
+}

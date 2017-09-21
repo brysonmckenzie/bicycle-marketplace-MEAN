@@ -15,7 +15,7 @@ module.exports = {
     user.save()
       .then(user => {
         req.session.user_id = user._id;
-        console.log(req.session.user_id + ' saved to sessions');
+        console.log(req.session.user_id + ' saved to session');
         res.json(user);
         console.log("After res.json, before redirect...");
       })
@@ -28,27 +28,19 @@ module.exports = {
   },
 
   loginUser: function(req, res) {
-    console.log("*****finding current user*****");
-    let current_user = User.findOne({ email: req.body.email }, function(
-      err,user) {
-      if (err) {
-        console.log("Error occured during finding Current User");
-        res.json(err);
-      } else {
-        console.log('Found ',current_user);
-        if ((current_user.password = req.body.password)) {
-            
-          req.session.user_id = user._id;
-          res.json(user);
-        }
-      }
-    });
+    User.findOne({email: req.body.email})
+    .then( user => { 
+      req.session.user_id = user._id;
+      console.log(req.session.user_id + ' saved to session')
+      res.json(user) 
+    })
+    .catch(err => {console.log(err)})
   },
 
   current: (req, res) => {
     if(!req.session.user_id){
       User.findOne({email: req.body.email}).then(user => {
-        console.log('*** JacKpot **** '+ user)
+        console.log('*** JacKpot **** ')
       })
     }
   },

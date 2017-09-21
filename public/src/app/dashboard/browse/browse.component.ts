@@ -9,9 +9,14 @@ import { ApiService } from "./../../api.service";
 })
 export class BrowseComponent implements OnInit {
 
+  allBikes = {}
+
   constructor(private _apiService: ApiService, private _router: Router) { }
 
   ngOnInit() {
+    this._apiService.allBicycles().then( bikes => {this.allBikes = bikes});
   }
-
+  
+  
+  
 }

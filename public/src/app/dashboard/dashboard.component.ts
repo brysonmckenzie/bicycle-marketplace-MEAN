@@ -12,8 +12,6 @@ import { NgForm } from "@angular/forms";
 })
 export class DashboardComponent implements OnInit {
   bikes: Array <any> =[];
-
-  @Output() logout_event = new EventEmitter();
  
 
   constructor(private _apiService: ApiService, private _router: Router) { }

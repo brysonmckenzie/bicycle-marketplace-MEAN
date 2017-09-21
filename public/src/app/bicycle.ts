@@ -4,6 +4,6 @@ export class Bicycle {
 		public description: string = "",
 		public price: number = 0,
 		public location: string = "",
-		public imageURL: string = "",
+		public image: string = "",
 		){}
 }

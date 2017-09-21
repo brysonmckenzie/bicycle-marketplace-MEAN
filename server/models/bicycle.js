@@ -1,39 +1,35 @@
 var mongoose = require('mongoose');
-
+var ObjectId = mongoose.Schema.Types.ObjectId
 var BicycleSchema = new mongoose.Schema({
     
-    imageURL: {
+    image: {
         type: String,
         required: false,
-        minLength: 2
     },
 
     title: {
         type: String,
-        required: true,
-        unique: false,
-        minLength: 10
+        required: false,
     },
 
     price: {
         type: Number,
-        required: true,
-        unique: false,
-        minLength: 10
+        required: false,
     },
 
     description: {
         type: String,
-        required: true,
-        unique: false,
-        minLength: 10
+        required: false,
     },
 
-    location : {
+    location: {
         type: String,
-        required: true,
-        unique: false,
-        minLength: 10
+        required: false,
+    },
+    
+    owner: {
+        type: ObjectId,
+        required: false,
     },
     
 }, {timestamps: true });

@@ -1,3 +1,56 @@
-<p>
-  listing works!
-</p>
+<div class="container">
+  <div class="content">
+    
+    <div class="content-form">
+        <h1>Create Listing</h1>
+      <form (submit)="newBike(bikeData)" #bikeData="ngForm">
+        <label>Image URL</label><br>
+        <input type="text" name="image" [(ngModel)]="bicycle.image" #image="ngModel"><br>
+
+        <label>Title</label><br>
+        <input type="text" name="title" [(ngModel)]="bicycle.title" #title="ngModel"><br>
+
+        <label>Description</label><br>
+        <textarea name="description" id="" cols="19" rows="5" [(ngModel)]="bicycle.description" #description="ngModel"></textarea><br>
+
+        <label>Price</label><br>
+        <input type="text" name="price" [(ngModel)]="bicycle.price" #price="ngModel"><br>
+
+        <label>Location</label><br>
+        <input type="text" name="location" [(ngModel)]="bicycle.location" #location="ngModel"><br>
+
+        <input type="submit" value="Submit">
+
+      </form>
+    </div>
+
+    <div class="listing" *ngFor="let index of userBikes">
+      <div class="list-box">
+        <form (submit)="updateList()" #updataData="ngForm">
+          <div class="img-box">
+            <h4>{{index.title}}</h4>
+            <img src="{{ index.image }}" alt="bike" width="200" height="100">
+          </div>
+          <div class="info-1">
+            <h3>Title</h3><br>
+            <input type="text" placeholder="{{index.title}}" name="up-title"><br>
+            <h3>Description</h3><br>
+            <textarea placeholder="{{ index.description }}" name="up-description" cols="20" rows="8"></textarea><br>
+          </div>
+          <div class="info-2">
+            <h3>Price</h3><br>
+            <input type="text" placeholder="{{index.price}}" name="up-price"><br>
+            <h3>Location</h3><br>
+            <input type="text" placeholder="{{index.location}}" name="up-5location"><br><br><br>
+            <input type="submit" value="UPDATE">
+            <input type="submit" value="DELETE">
+
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+
+  </div>
+</div>

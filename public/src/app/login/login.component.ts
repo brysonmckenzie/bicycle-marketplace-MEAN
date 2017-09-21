@@ -19,7 +19,8 @@ export class LoginComponent implements OnInit {
   constructor(private _apiService: ApiService, private _router: Router) {
     this._apiService.randomBike()
     .then((bikes) => {this.random = bikes})
-    .catch((err) => { console.log(err)});
+    .catch((err) => { console.log(err)
+    });
   }
 
   ngOnInit() { 

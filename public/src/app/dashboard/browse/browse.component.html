@@ -1,3 +1,18 @@
-<p>
-  browse works!
-</p>
+<div class="container">
+  <div class="open-list" *ngFor="let bike of allBikes">
+    <img src="{{ bike.image }}" alt="bikes">
+    <div class="text-content1">
+      <h3>Title:</h3>
+      <p>{{bike.title}}</p>
+      <h3>Description</h3>
+      <p>{{bike.description}}</p>
+      <div class="text-content2">
+        <h3 class="super" >Price:</h3>
+        <p class="super">{{bike.price | currency:USD:true}}</p>
+        <h3>Location:</h3>
+        <p>{{bike.location}}</p>
+      </div>
+    </div>
+
+  </div>
+</div>

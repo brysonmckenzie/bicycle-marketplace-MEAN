@@ -19,6 +19,11 @@ module.exports = function(app) {
         console.log("**** loading random bikes ****");
     });
 
+    app.get('/api/userBikes', function(req,res){
+        bikes.userBikes(req,res);
+        console.log("**** loading all bikes ****")
+    });
+   
     app.get('/api/allBikes', function(req,res){
         bikes.allBikes(req,res);
         console.log("**** loading all bikes ****")
@@ -32,28 +37,10 @@ module.exports = function(app) {
         users.current(req,res)
     });
 
-
-
-
-
-
-    
-    // app.get('/api/userLogin', function(req, res) {
-    //     users.userLogin(req, res);
-    //     console.log('****Getting User Data****');
-    // });
-
-    // app.post('/api/examples/update', function(req, res) {
-    //     examples.update(req, res);
-    //     console.log('example.update route hit')
-    // })
-
-    // app.post('/api/register/destroy', function(req, res) {
-    //     examples.destroy(req, res);
-    //     console.log('example.delete route hit');
-    // })
-
-
+    app.post('/api/newBikeListing', function(req,res){
+        bikes.create(req,res)
+        console.log("creating bike-list for ",req.session.user_id)
+    });
 
     app.all('*', function(req, res) {
         console.log('app.all hit - in routes.js')
