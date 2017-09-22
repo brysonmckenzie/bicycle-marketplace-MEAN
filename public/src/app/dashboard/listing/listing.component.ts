@@ -19,6 +19,12 @@ export class ListingComponent implements OnInit {
   ngOnInit() {
     this._apiService.getBikes().then( bikes => {this.userBikes = bikes});
 
+    this._apiService.currentUser()
+    .then(user => {})
+    .catch(err => {this._router.navigate(['']);
+    console.log(User)
+  });
+  
   };
 
   newBike(){

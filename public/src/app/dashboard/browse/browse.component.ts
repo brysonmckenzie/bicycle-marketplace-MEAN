@@ -10,13 +10,19 @@ import { ApiService } from "./../../api.service";
 export class BrowseComponent implements OnInit {
 
   allBikes = {}
+  curr_user: Boolean = false;
 
   constructor(private _apiService: ApiService, private _router: Router) { }
 
   ngOnInit() {
     this._apiService.allBicycles().then( bikes => {this.allBikes = bikes});
+
+    this._apiService.currentUser()
+    .then( user => { this.curr_user == true})
+    .catch((err) => { console.log(err)})
   }
-  
+
+
   
   
 }

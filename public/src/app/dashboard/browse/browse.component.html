@@ -11,6 +11,9 @@
         <p class="super">{{bike.price | currency:USD:true}}</p>
         <h3>Location:</h3>
         <p>{{bike.location}}</p>
+        <input type="submit" value="DELETE" *ngIf="curr_user" >
+        <input type="submit" value="CONTACT" *ngIf="!curr_user">
+        
       </div>
     </div>
 

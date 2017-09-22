@@ -38,11 +38,14 @@ module.exports = {
   },
 
   current: (req, res) => {
-    if(!req.session.user_id){
-      User.findOne({email: req.body.email}).then(user => {
-        console.log('*** JacKpot **** ')
-      })
-    }
+   if(!req.session.user_id){
+    res.json(false)
+   } else{
+    User.findOne({_id:req.session.user_id })
+    .then(user => { console.log('current user information'+ user.id) })
+    .catch((err, user) => { console.log(err) 
+    })
+   }
   },
 
   logout:  (req, res) => {
