@@ -10,7 +10,7 @@ import { ApiService } from "./../../api.service";
 export class BrowseComponent implements OnInit {
 
   allBikes = {}
-  curr_user: Boolean = false;
+  curr = {};
 
   constructor(private _apiService: ApiService, private _router: Router) { }
 
@@ -18,7 +18,10 @@ export class BrowseComponent implements OnInit {
     this._apiService.allBicycles().then( bikes => {this.allBikes = bikes});
 
     this._apiService.currentUser()
-    .then( user => { this.curr_user == true})
+    .then( user => { 
+      this.curr = user
+      console.log(user._id)
+    })
     .catch((err) => { console.log(err)})
   }
 

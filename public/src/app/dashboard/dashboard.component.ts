@@ -11,7 +11,7 @@ import { NgForm } from "@angular/forms";
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  bikes: Array <any> =[];
+  bikes: Array <any> = [];
  
 
   constructor(private _apiService: ApiService, private _router: Router) { }
@@ -33,7 +33,7 @@ export class DashboardComponent implements OnInit {
     }
   
     
-  }
+}
 
   
 

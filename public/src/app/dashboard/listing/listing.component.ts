@@ -17,7 +17,8 @@ export class ListingComponent implements OnInit {
   constructor(private _apiService: ApiService, private _router: Router) { }
 
   ngOnInit() {
-    this._apiService.getBikes().then( bikes => {this.userBikes = bikes});
+    this._apiService.getBikes()
+    .then( bikes => {this.userBikes = bikes});
 
     this._apiService.currentUser()
     .then(user => {})

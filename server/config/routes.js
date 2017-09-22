@@ -21,7 +21,7 @@ module.exports = function(app) {
 
     app.get('/api/userBikes', function(req,res){
         bikes.userBikes(req,res);
-        console.log("**** loading all bikes ****")
+        console.log("**** loading User bikes ****")
     });
    
     app.get('/api/allBikes', function(req,res){

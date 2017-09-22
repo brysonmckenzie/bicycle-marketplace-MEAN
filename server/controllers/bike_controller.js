@@ -42,7 +42,11 @@ module.exports = {
 
     userBikes: (req,res) => { Bike.find({owner: req.session.user_id})
     .then((bikes) => { res.json(bikes)
-        console.log(bikes)})
+        console.log('********* user bikes starting process... in User Bikes ************')
+        console.log(bikes)
+        console.log('******** userBikes sending data ********')
+    
+    })
     .catch((err, bikes) => {
         if(err){
             console.log('error!!! userBikes not loading')

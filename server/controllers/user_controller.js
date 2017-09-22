@@ -42,7 +42,7 @@ module.exports = {
     res.json(false)
    } else{
     User.findOne({_id:req.session.user_id })
-    .then(user => { console.log('current user information'+ user.id) })
+    .then(user => { console.log('current user information '+ user.id) })
     .catch((err, user) => { console.log(err) 
     })
    }

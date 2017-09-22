@@ -17,7 +17,6 @@
         <input type="text" name="price" [(ngModel)]="bicycle.price" #price="ngModel"><br>
 
         <label>Location</label><br>
-        <input type="text" name="location" [(ngModel)]="bicycle.location" #location="ngModel"><br>
 
         <input type="submit" value="Submit">
 
@@ -33,17 +32,19 @@
           </div>
           <div class="info-1">
             <h3>Title</h3><br>
-            <input type="text" placeholder="{{index.title}}" name="up-title"><br>
+            <input type="text" placeholder="{{index.title}}" name="title"><br>
             <h3>Description</h3><br>
-            <textarea placeholder="{{ index.description }}" name="up-description" cols="20" rows="8"></textarea><br>
+            <textarea placeholder="{{ index.description }}" name="description" cols="20" rows="8"></textarea><br>
           </div>
           <div class="info-2">
             <h3>Price</h3><br>
-            <input type="text" placeholder="{{index.price}}" name="up-price"><br>
+            <input type="text" placeholder="{{index.price}}" name="price"><br>
             <h3>Location</h3><br>
-            <input type="text" placeholder="{{index.location}}" name="up-5location"><br><br><br>
+            <input type="text" placeholder="{{index.location}}" name="location"><br><br><br>
             <input type="submit" value="UPDATE">
             <input type="submit" value="DELETE">
+
+        
 
           </div>
         </form>
