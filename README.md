@@ -1,4 +1,4 @@
 
 # Bicycle Marketplace
 
-![Login](.md-pics/pic1.png/)
+![Login](./md-pics/pic1.png/)
