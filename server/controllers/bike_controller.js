@@ -68,6 +68,13 @@ module.exports = {
     .then((bikes) => { res.json(bikes)
         console.log(bikes)})
     .catch((err, bikes) => { console.log(err) })
-    }
+    },
+
+    updateBike: (req,res) => {Bike.findOneAndUpdate({_id: req.params._id, req.params._id})},
+    
+    
+    
+    deleteBike: (req,res) => {Bike.findOneAndRemove({_id: req.params._id})}
   
+    
 }

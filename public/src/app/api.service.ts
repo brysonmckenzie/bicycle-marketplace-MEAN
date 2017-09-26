@@ -38,4 +38,13 @@ export class ApiService {
   createBike(bike){
     return this._http.post('/api/newBikeListing', bike).map(data => data.json()).toPromise();
   }
+
+  updateBike(bike) {
+  	return this._http.put('/api/update/', bike._id).map( (response) => response.json()).toPromise()
+  }
+
+  deleteBike(bike) {
+  	return this._http.delete('/api/deleteBike/',bike._id).map( (response) => response.json()).toPromise()
+  }
+  
 }

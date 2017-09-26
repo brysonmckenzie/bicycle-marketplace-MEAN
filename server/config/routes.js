@@ -37,6 +37,15 @@ module.exports = function(app) {
         users.current(req,res)
     });
 
+    app.put('/api/updateBikes/:id', (req, res)=>{
+        bikes.updateBike(req,res)
+        
+      });
+
+      app.delete('/api/deleteBike/:id', (req,res)=>{
+          bikes.deleteBike(req,res)
+      });
+
     app.post('/api/newBikeListing', function(req,res){
         bikes.create(req,res)
         console.log("creating bike-list for ",req.session.user_id)
